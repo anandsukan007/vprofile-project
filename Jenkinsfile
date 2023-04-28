@@ -14,7 +14,7 @@ pipeline {
 	NEXUS_REPOGRP_ID    = "vprofile-grp-repo"
         NEXUS_CREDENTIAL_ID = "nexuslogin"
         ARTVERSION = "${env.BUILD_ID}" */
-	SONARSERVER = 'sonarserver
+	SONARSERVER = 'sonarserver'
 	SONARSCANNER = 'sonarscanner'    
     }
 	
