@@ -25,9 +25,6 @@ pipeline {
         
         stage('BUILD'){
             steps {
-                nexusArtifactUploader(
-                nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
-                credentialsId: ${NEXUS_LOGIN})
                 sh 'mvn -s settings.xml -U clean install -DskipTests'
             }
             post {
