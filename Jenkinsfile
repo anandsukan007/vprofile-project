@@ -4,25 +4,28 @@ pipeline {
 	
 	tools {
         maven "maven3"
+        jdk "JDK8"
     }
 	
     environment {
-        /* NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "172.31.40.209:8081"
-        NEXUS_REPOSITORY = "vprofile-release"
-	NEXUS_REPOGRP_ID    = "vprofile-grp-repo"
-        NEXUS_CREDENTIAL_ID = "nexuslogin"
-        ARTVERSION = "${env.BUILD_ID}" */
-	SONARSERVER = 'sonarserver'
-	SONARSCANNER = 'sonarscanner'    
+        SNAP_REPO = 'vprofile-snapshot'
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'Vini@123'
+        RELEASE_REPO = 'vprofile-release'
+	    CENTRAL_REPO   = 'vprofile-grp-repo'
+        NEXUSIP = '172.31.37.64'
+        NEXUSPORT = '8081'
+        NEXUS_GRP_REPO = 'vpro-maven-group'
+        NEXUS_LOGIN = 'nexuslogin'
+	    SONARSERVER = 'sonarserver'
+	    SONARSCANNER = 'sonarscanner'    
     }
 	
     stages{
         
         stage('BUILD'){
             steps {
-                sh 'mvn clean install -DskipTests'
+                sh 'mvn -s settings.xml install -DskipTests'
             }
             post {
                 success {
