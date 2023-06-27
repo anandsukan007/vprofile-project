@@ -10,7 +10,7 @@ pipeline {
     environment {
         SNAP_REPO = 'vprofile-snapshot'
         NEXUS_USER = 'vprofile'
-        NEXUS_PASS = 'Vini@123'
+        NEXUS_PASS = "Vini@123"
         RELEASE_REPO = 'vprofile-release'
 	CENTRAL_REPO   = 'vpro-maven-central'
         NEXUSIP = '3.109.185.176'
